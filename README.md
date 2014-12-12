@@ -1,3 +1,3 @@
 Microscope
 ==========
-Hacker News like app writing in Meteor
+Hacker News like app written in Meteor
