@@ -7,7 +7,7 @@ Template.postSubmit.events({
 			title: templ.find('input[name=title]').value
 		};
 
-		Meteor.call('postInsert', post, function(error, result) {
+		var result = Meteor.call('postInsert', post, function(error, result) {
 			if (error) {
 				return alert(error.reason);
 			}
@@ -15,8 +15,8 @@ Template.postSubmit.events({
 			if (result.postExists) {
 				alert('This link has already been posted');
 			}
-
-			Router.go('postPage', {_id: result._id});
 		});
+
+		Router.go('postsList');
 	}
 });
